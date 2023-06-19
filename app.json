@@ -1,6 +1,9 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "my app",
+    "plugins": [
+      "react-native-vision-camera"
+    ],
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,13 +18,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.viniciusborbaqueiroz.myapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
